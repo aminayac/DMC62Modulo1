@@ -1,7 +1,14 @@
 import streamlit as st
 
 st.title("Especialización en Python for Analytics",text_alignment="center")
-st.image("python-logo.png")
+
+# Crea tres columnas
+col1, col2, col3 = st.columns(3)
+# Coloca la imagen en la columna del medio
+with col2:
+    st.image("python-logo.png")
+    
+#st.image("python-logo.png")
 st.sidebar.image("python-logo.png")
 opcion = st.sidebar.selectbox(
     "Seleccione una opción",
