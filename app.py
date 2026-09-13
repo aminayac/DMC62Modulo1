@@ -12,7 +12,6 @@ with col2:
 st.sidebar.image("python-logo.png")
 st.sidebar.markdown("### Seleccione una opción")
 opcion = st.sidebar.selectbox(
-    "",
     ("Home", "Ejercicio 1", "Ejercicio 2", "Ejercicio 3", "Ejercicio 4"),
     index=0
 )
