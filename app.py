@@ -53,29 +53,18 @@ if opcion == HOME:
   st.write("Breve descripción del proyecto")
   st.write("Tecnologías utilizadas")
 elif opcion == EJERCICIO1:
-  def click_anadir():
-    st.write("Registro añadido")
-      
   #Ejercicio 1 – Flujo de caja con listas
   st.write("Ejercicio 1 – Flujo de caja con listas")
   #crea 4 columnas para mostrar los elementos del formulario
   col1, col2, col3, col4 = st.columns(4)
   #concepto
-  #with col1:
   concepto = col1.text_input("Concepto")
-  with col2:
-    tipo_mov = st.selectbox(
-    "Tipo Movimiento",
-    ("Ingreso","Gasto"),
-     index=None,
-     placeholder="Seleccione..."
-    )
-  with col3:
-    valor = st.number_input("Valor",value=0)
-  with col4:
-    st.write("")
-    st.write("")
-    st.button("Añadir", on_click=click_anadir)
+  tipo_mov = col2.selectbox("Tipo Movimiento",("Ingreso","Gasto"),index=None,placeholder="Seleccione...")
+  valor = col3.number_input("Valor",value=0)
+  col4.write("")
+  col4.write("")
+  if col4.button("Añadir"):
+      st.write("Registro añadido")
         
 
 
