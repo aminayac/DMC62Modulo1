@@ -4,8 +4,7 @@ import datetime
 # Configuración de la página
 st.set_page_config(
     page_title="Especialización en Python for Analytics - Módulo 1",
-    page_icon="🐍",
-    layout="wide",
+    page_icon=":armenia:"
 )
 
 st.title("Especialización en Python for Analytics",text_alignment="center")
