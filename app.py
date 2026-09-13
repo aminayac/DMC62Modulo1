@@ -64,7 +64,7 @@ elif opcion == EJERCICIO1:
   col4.write("")
   col4.write("")
   if col4.button("Añadir"):
-      st.write("Registro añadido")
+      st.write("Registro añadido.. Hacer listas de conceptos, etc. Luego hacerlo diccionario y luego dataframe")
         
 
 
