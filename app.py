@@ -62,16 +62,16 @@ elif opcion == EJERCICIO1:
   col1, col2, col3, col4 = st.columns(4)
   #concepto
   #with col1:
-  concepto = st.col1.text_input("Concepto")
+  concepto = col1.text_input("Concepto")
   with col2:
     tipo_mov = st.selectbox(
-    "Tipo Mov.",
+    "Tipo Movimiento",
     ("Ingreso","Gasto"),
      index=None,
      placeholder="Seleccione..."
     )
   with col3:
-    valor = st.number_input("Ingresa tu valor final del rango",value=0)
+    valor = st.number_input("Valor",value=0)
   with col4:
     st.write("")
     st.write("")
