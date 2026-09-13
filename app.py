@@ -54,4 +54,5 @@ if opcion == HOME:
   st.write("Tecnologías utilizadas")
 elif opcion == EJERCICIO1:
   #Ejercicio 1 – Flujo de caja con listas
+  st.write("Ejercicio 1 – Flujo de caja con listas")
 
