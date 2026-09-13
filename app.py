@@ -10,8 +10,9 @@ with col2:
 
 #en la barra lateral izq muestra la imagen y crea el select box
 st.sidebar.image("python-logo.png")
+st.sidebar.markdown(""###Seleccione una opción")
 opcion = st.sidebar.selectbox(
-    "###Seleccione una opción",
+    "",
     ("Home", "Ejercicio 1", "Ejercicio 2", "Ejercicio 3", "Ejercicio 4"),
     index=0
 )
