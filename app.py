@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("Especialización en Python for Analytics")
 st.image("python-logo.png",width =400)
-opcion = st.selectbox(
+opcion = st.sidebar.selectbox(
     "Seleccione una opción",
     ("Home", "Módulo 1", "Módulo 2", "Módulo 3", "Módulo 4"),
     index=0
