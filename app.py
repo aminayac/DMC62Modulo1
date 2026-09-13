@@ -16,6 +16,19 @@ opcion = st.sidebar.selectbox(
     index=0
 )
 
+st.sidebar.markdown("---")
+st.sidebar.markdown("### Autor")
+st.sidebar.write("Aníbal Abraham Minaya Cubillas")
+st.sidebar.write("Estudiante — Especialización en Python for Analytics")
+st.sidebar.write(f"Año: {datetime.datetime.now().year}")
+
+if st.sidebar.checkbox("Mostrar contacto"):
+    st.sidebar.markdown("📧 anibal@example.com  ")
+    st.sidebar.markdown("📍 Lima, Perú  ")
+
+st.sidebar.markdown("---")
+st.sidebar.markdown("_Esta aplicación utiliza únicamente la librería Streamlit para su interfaz._")
+
 if opcion == "Home":
   #página home de presentación del proyecto
   #st.subheader("Módulo 1")
