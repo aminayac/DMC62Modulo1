@@ -2,7 +2,7 @@ import streamlit as st
 import datetime
 
 #opciones del selectbox
-HOME = "Home"
+HOME       = "Home"
 EJERCICIO1 = "Ejercicio 1"
 EJERCICIO2 = "Ejercicio 2"
 EJERCICIO3 = "Ejercicio 3"
@@ -53,6 +53,9 @@ if opcion == HOME:
   st.write("Breve descripción del proyecto")
   st.write("Tecnologías utilizadas")
 elif opcion == EJERCICIO1:
+  def click_anadir():
+    st.write("Registro añadido")
+      
   #Ejercicio 1 – Flujo de caja con listas
   st.write("Ejercicio 1 – Flujo de caja con listas")
   #crea 4 columnas para mostrar los elementos del formulario
@@ -71,8 +74,9 @@ elif opcion == EJERCICIO1:
     valor = st.number_input("Ingresa tu valor final del rango",value=0)
   with col4:
     st.write("")
-    if st.button("Añadir"):
-        st.write("Registro añadido")
+    st.write("")
+    st.button("Añadir", on_click=click_anadir):
+        
 
 
       
