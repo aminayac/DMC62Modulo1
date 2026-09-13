@@ -75,7 +75,7 @@ elif opcion == EJERCICIO1:
   with col4:
     st.write("")
     st.write("")
-    st.button("Añadir", on_click=click_anadir):
+    st.button("Añadir", on_click=click_anadir)
         
 
 
