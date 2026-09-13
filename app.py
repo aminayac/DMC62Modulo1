@@ -61,8 +61,8 @@ elif opcion == EJERCICIO1:
   #crea 4 columnas para mostrar los elementos del formulario
   col1, col2, col3, col4 = st.columns(4)
   #concepto
-  with col1:
-    concepto = st.text_input("Concepto")
+  #with col1:
+  concepto = st.col1.text_input("Concepto")
   with col2:
     tipo_mov = st.selectbox(
     "Tipo Mov.",
