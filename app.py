@@ -1,4 +1,12 @@
 import streamlit as st
+import datetime
+
+# Configuración de la página
+st.set_page_config(
+    page_title="Especialización en Python for Analytics - Módulo 1",
+    page_icon="🐍",
+    layout="wide",
+)
 
 st.title("Especialización en Python for Analytics",text_alignment="center")
 
@@ -35,7 +43,7 @@ if opcion == "Home":
   st.write("Elaborado por Anibal Abraham Minaya Cubillas")
   st.write("Módulo 1")
   st.write("Información general del estudiante")  
-  st.write("Año : ")
+  st.write(f"Año: {datetime.datetime.now().year}")
   st.write("Breve descripción del proyecto")
   st.write("Tecnologías utilizadas")
 
