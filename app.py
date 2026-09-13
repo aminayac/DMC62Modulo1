@@ -55,4 +55,22 @@ if opcion == HOME:
 elif opcion == EJERCICIO1:
   #Ejercicio 1 – Flujo de caja con listas
   st.write("Ejercicio 1 – Flujo de caja con listas")
+  #crea 4 columnas para mostrar los elementos del formulario
+  col1, col2, col3, col4 = st.columns(4)
+  #concepto
+  with col1:
+    concepto = st.text_input("Concepto")
+  with col2:
+    tipo_mov = st.selectbox(
+    "Tipo Mov.",
+    ("Ingreso","Gasto"),
+    index=0
+    )
+  with col3:
+    valor = st.number_input("Ingresa tu valor final del rango",value=0)
+  with col4:
+    if st.button("Añadir"):
+        st.write("Registro añadido")
 
+
+      
