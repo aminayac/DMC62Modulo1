@@ -64,11 +64,13 @@ elif opcion == EJERCICIO1:
     tipo_mov = st.selectbox(
     "Tipo Mov.",
     ("Ingreso","Gasto"),
-    index=0
+     index=None,
+     placeholder="Seleccione..."
     )
   with col3:
     valor = st.number_input("Ingresa tu valor final del rango",value=0)
   with col4:
+    st.write("")
     if st.button("Añadir"):
         st.write("Registro añadido")
 
