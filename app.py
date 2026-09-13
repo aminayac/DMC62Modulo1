@@ -1,6 +1,13 @@
 import streamlit as st
 import datetime
 
+#opciones del selectbox
+HOME = "Home"
+EJERCICIO1 = "Ejercicio 1"
+EJERCICIO2 = "Ejercicio 2"
+EJERCICIO3 = "Ejercicio 3"
+EJERCICIO4 = "Ejercicio 4"
+
 # Configuración de la página
 st.set_page_config(
     page_title="Especialización en Python for Analytics - Módulo 1",
@@ -19,7 +26,7 @@ with col2:
 st.sidebar.image("python-logo.png")
 opcion = st.sidebar.selectbox(
     "**Seleccione una opción**",
-    ("Home", "Ejercicio 1", "Ejercicio 2", "Ejercicio 3", "Ejercicio 4"),
+    (HOME, EJERCICIO1, EJERCICIO2, EJERCICIO3, EJERCICIO4),
     index=0
 )
 
@@ -36,7 +43,7 @@ if st.sidebar.checkbox("Mostrar contacto"):
 st.sidebar.markdown("---")
 st.sidebar.markdown("_Esta aplicación utiliza únicamente la librería Streamlit para su interfaz._")
 
-if opcion == "Home":
+if opcion == HOME:
   #página home de presentación del proyecto
   #st.subheader("Módulo 1")
   st.write("Elaborado por Anibal Abraham Minaya Cubillas")
@@ -45,4 +52,6 @@ if opcion == "Home":
   st.write(f"Año: {datetime.datetime.now().year}")
   st.write("Breve descripción del proyecto")
   st.write("Tecnologías utilizadas")
+elif opcion == EJERCICIO1:
+  #Ejercicio 1 – Flujo de caja con listas
 
