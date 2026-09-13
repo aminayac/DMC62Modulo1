@@ -1,15 +1,16 @@
 import streamlit as st
 
-st.title("Especialización en Python for Analytics")
-st.image("python-logo.png",width =400)
+st.title("Especialización en Python for Analytics",text_alignment="center")
+st.image("python-logo.png")
+st.sidebar.image("python-logo.png")
 opcion = st.sidebar.selectbox(
     "Seleccione una opción",
-    ("Home", "Módulo 1", "Módulo 2", "Módulo 3", "Módulo 4"),
+    ("Home", "Ejercicio 1", "Ejercicio 2", "Ejercicio 3", "Ejercicio 4"),
     index=0
 )
 
 if opcion == "Home":
-  #página home de preseentación del proyecto
+  #página home de presentación del proyecto
   st.subheader("Módulo 1")
   st.write("Elaborado por Anibal Minaya")
   st.markdown("prueba") 
