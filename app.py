@@ -20,7 +20,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("### Autor")
 st.sidebar.write("Aníbal Abraham Minaya Cubillas")
 st.sidebar.write("Estudiante — Especialización en Python for Analytics")
-st.sidebar.write(f"Año: {datetime.datetime.now().year}")
+st.sidebar.write("Año: ")
 
 if st.sidebar.checkbox("Mostrar contacto"):
     st.sidebar.markdown("📧 anibal@example.com  ")
