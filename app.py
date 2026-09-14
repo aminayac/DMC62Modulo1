@@ -89,7 +89,10 @@ elif opcion == EJERCICIO1:
           st.error("El campo valor no puede ser menor a cero.")
       else:
           lista_conceptos.append(concepto)
-          lista_tipos_mov.append(tipo_mov)
+          if tipo_mov == "Gasto":
+              lista_tipos_mov.append(tipo_mov*-1)
+          else:
+              lista_tipos_mov.append(tipo_mov)
           lista_valores.append(valor)
           st.session_state['LISTA_CONCEPTOS'] = lista_conceptos
           st.session_state['LISTA_TIPO_MOV'] = lista_tipos_mov
@@ -103,3 +106,9 @@ elif opcion == EJERCICIO1:
   #col1.text_input.value = ""
   #col2.selectbox.index=None
   #col3.number_input.value=0
+  col1, col2, col3 = st.columns(3)
+  col1.write("Ingresos : " + sum(lista_valores))
+  col2.write("Gastos   : " + sum(lista_valores))
+  col3.write("Saldo    : " + sum(lista_valores))
+
+
