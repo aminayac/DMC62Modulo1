@@ -68,6 +68,7 @@ elif opcion == EJERCICIO1:
     lista_conceptos = st.session_state['LISTA_CONCEPTOS']
     lista_tipos_mov = st.session_state['LISTA_TIPO_MOV']
     lista_valores   = st.session_state['LISTA_VALOR']
+
   #Ejercicio 1 – Flujo de caja con listas
   st.write("Ejercicio 1 – Flujo de caja con listas")
   #crea 4 columnas para mostrar los elementos del formulario
