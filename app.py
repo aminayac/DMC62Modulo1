@@ -53,6 +53,21 @@ if opcion == HOME:
   st.write("Breve descripción del proyecto")
   st.write("Tecnologías utilizadas")
 elif opcion == EJERCICIO1:
+  #inicializa listas
+  lista_conceptos = []
+  lista_tipos_mov = []
+  lista_valores   = []
+  #verifica si existen las variables de sesion: lista de conceptos, tipos y montos
+  #si no existen, las inicializa, si existen, las recupera
+  if 'MISESION' not in st.session_state:
+    st.session_state['MISESION'] = True
+    st.session_state['LISTA_CONCEPTOS'] = lista_conceptos
+    st.session_state['LISTA_TIPO_MOV'] = lista_tipos_mov
+    st.session_state['LISTA_VALOR'] = lista_valores
+  elif:
+    lista_conceptos = st.session_state['LISTA_CONCEPTOS']
+    lista_tipos_mov = st.session_state['LISTA_TIPO_MOV']
+    lista_valores   = st.session_state['LISTA_VALOR']
   #Ejercicio 1 – Flujo de caja con listas
   st.write("Ejercicio 1 – Flujo de caja con listas")
   #crea 4 columnas para mostrar los elementos del formulario
@@ -64,8 +79,14 @@ elif opcion == EJERCICIO1:
   col4.write("")
   col4.write("")
   if col4.button("Añadir"):
-      st.write("Registro añadido.. Hacer listas de conceptos, etc. Luego hacerlo diccionario y luego dataframe")
-        
-
-
+      #st.write("Registro añadido.. Hacer listas de conceptos, etc. Luego hacerlo diccionario y luego dataframe")
+      lista_conceptos.append(concepto)
+      lista_tipos_mov.append(tipo_mov)
+      lista_valores.append(valor)
+      st.session_state['LISTA_CONCEPTOS'] = lista_conceptos
+      st.session_state['LISTA_TIPO_MOV'] = lista_tipos_mov
+      st.session_state['LISTA_VALOR'] = lista_valores
+      st.write(lista_conceptos)  
+      st.write(lista_tipos_mov)
+      st.write(lista_valores)
       
