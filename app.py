@@ -93,7 +93,8 @@ elif opcion == EJERCICIO1:
       #st.write(lista_valores)
   diccionario_datos = {"Concepto" : lista_conceptos, "Tipo Movimiento" : lista_tipos_mov, "Valor" : lista_valores}
   tabla = pandas.DataFrame(diccionario_datos, index=None)
-  st.write(tabla)
-  col1.text_input.value = ""
-  col2.selectbox.index=None
-  col3.number_input.value=0
+  tabla_sin_indice = tabla.reset_index(drop=True)
+  st.write(tabla_sin_indice)
+  #col1.text_input.value = ""
+  #col2.selectbox.index=None
+  #col3.number_input.value=0
