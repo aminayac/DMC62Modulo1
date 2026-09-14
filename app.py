@@ -81,7 +81,10 @@ elif opcion == EJERCICIO1:
   col4.write("")
   col4.write("")
   if col4.button("Añadir"):
-      #st.write("Registro añadido.. Hacer listas de conceptos, etc. Luego hacerlo diccionario y luego dataframe")
+      if concepto.strip() == "":
+          st.error("El campo concepto no puede estar vacío.")
+      elif valor == 0:
+          st.warning("El campo valor no puede ser cero.")
       lista_conceptos.append(concepto)
       lista_tipos_mov.append(tipo_mov)
       lista_valores.append(valor)
