@@ -64,7 +64,7 @@ elif opcion == EJERCICIO1:
     st.session_state['LISTA_CONCEPTOS'] = lista_conceptos
     st.session_state['LISTA_TIPO_MOV'] = lista_tipos_mov
     st.session_state['LISTA_VALOR'] = lista_valores
-  elif:
+  else:
     lista_conceptos = st.session_state['LISTA_CONCEPTOS']
     lista_tipos_mov = st.session_state['LISTA_TIPO_MOV']
     lista_valores   = st.session_state['LISTA_VALOR']
