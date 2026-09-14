@@ -94,6 +94,7 @@ elif opcion == EJERCICIO1:
   diccionario_datos = {"Concepto" : lista_conceptos, "Tipo Movimiento" : lista_tipos_mov, "Valor" : lista_valores}
   tabla = pandas.DataFrame(diccionario_datos, index=None)
   tabla_sin_indice = tabla.reset_index(drop=True)
+  tabla_sin_indice.style.hide(axis="index")
   st.write(tabla_sin_indice)
   #col1.text_input.value = ""
   #col2.selectbox.index=None
