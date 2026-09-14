@@ -20,8 +20,7 @@ st.title("Especialización en Python for Analytics",text_alignment="center")
 #crea tres columnas para mostrar la imagen centrada
 col1, col2, col3 = st.columns(3)
 #coloca la imagen en la columna del medio
-with col2:
-    st.image("python-logo.png")
+col2.image("python-logo.png")
 
 #en la barra lateral izq muestra la imagen y crea el select box
 st.sidebar.image("python-logo.png")
@@ -74,7 +73,6 @@ elif opcion == EJERCICIO1:
   st.write("Ejercicio 1 – Flujo de caja con listas")
   #crea 4 columnas para mostrar los elementos del formulario
   col1, col2, col3, col4 = st.columns(4)
-  #concepto
   concepto = col1.text_input("Concepto")
   tipo_mov = col2.selectbox("Tipo Movimiento",("Ingreso","Gasto"),index=None,placeholder="Seleccione...")
   valor = col3.number_input("Valor",value=0)
@@ -83,10 +81,12 @@ elif opcion == EJERCICIO1:
   if col4.button("Añadir"):
       if concepto.strip() == "":
           st.error("El campo concepto no puede estar vacío.")
+      elif tipo_mov == None
+          st.error("Seleccione un tipo de movimiento")
       elif valor == 0:
-          st.warning("El campo valor no puede ser cero.")
+          st.error("El campo valor no puede ser cero.")
       elif valor < 0:
-          st.warning("El campo valor no puede ser menor a cero.")
+          st.error("El campo valor no puede ser menor a cero.")
       else:
           lista_conceptos.append(concepto)
           lista_tipos_mov.append(tipo_mov)
@@ -99,8 +99,6 @@ elif opcion == EJERCICIO1:
       #st.write(lista_valores)
   diccionario_datos = {"Concepto" : lista_conceptos, "Tipo Movimiento" : lista_tipos_mov, "Valor" : lista_valores}
   tabla = pandas.DataFrame(diccionario_datos)
-  #tabla_sin_indice = tabla.reset_index(drop=True)
-  #tabla_sin_indice.style.hide(axis="index")
   st.dataframe(tabla, hide_index=True)
   #col1.text_input.value = ""
   #col2.selectbox.index=None
