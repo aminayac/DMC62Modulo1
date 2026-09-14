@@ -81,7 +81,7 @@ elif opcion == EJERCICIO1:
   if col4.button("Añadir"):
       if concepto.strip() == "":
           st.error("El campo concepto no puede estar vacío.")
-      elif tipo_mov == None
+      elif tipo_mov == None:
           st.error("Seleccione un tipo de movimiento")
       elif valor == 0:
           st.error("El campo valor no puede ser cero.")
