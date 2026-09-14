@@ -95,7 +95,7 @@ elif opcion == EJERCICIO1:
   tabla = pandas.DataFrame(diccionario_datos, index=None)
   tabla_sin_indice = tabla.reset_index(drop=True)
   tabla_sin_indice.style.hide(axis="index")
-  st.write(tabla_sin_indice)
+  st.dataframe(tabla_sin_indice, hide_index=True)
   #col1.text_input.value = ""
   #col2.selectbox.index=None
   #col3.number_input.value=0
