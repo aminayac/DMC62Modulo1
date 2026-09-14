@@ -85,12 +85,15 @@ elif opcion == EJERCICIO1:
           st.error("El campo concepto no puede estar vacío.")
       elif valor == 0:
           st.warning("El campo valor no puede ser cero.")
-      lista_conceptos.append(concepto)
-      lista_tipos_mov.append(tipo_mov)
-      lista_valores.append(valor)
-      st.session_state['LISTA_CONCEPTOS'] = lista_conceptos
-      st.session_state['LISTA_TIPO_MOV'] = lista_tipos_mov
-      st.session_state['LISTA_VALOR'] = lista_valores
+      elif valor < 0:
+          st.warning("El campo valor no puede ser menor a cero.")
+      else:
+          lista_conceptos.append(concepto)
+          lista_tipos_mov.append(tipo_mov)
+          lista_valores.append(valor)
+          st.session_state['LISTA_CONCEPTOS'] = lista_conceptos
+          st.session_state['LISTA_TIPO_MOV'] = lista_tipos_mov
+          st.session_state['LISTA_VALOR'] = lista_valores
       #st.write(lista_conceptos)  
       #st.write(lista_tipos_mov)
       #st.write(lista_valores)
