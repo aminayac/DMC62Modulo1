@@ -107,7 +107,7 @@ elif opcion == EJERCICIO1:
   #col2.selectbox.index=None
   #col3.number_input.value=0
   col1, col2, col3 = st.columns(3)
-  col1.write("Ingresos : " , lista_valores)
+  col1.write(f"Ingresos : {lista_valores}")
   #col2.write("Gastos   : " , sum(lista_valores))
   #col3.write("Saldo    : " , sum(lista_valores))
 
