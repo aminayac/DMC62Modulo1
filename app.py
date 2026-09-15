@@ -90,7 +90,7 @@ elif opcion == EJERCICIO1:
   st.markdown("En este ejercicio se desarrolla un módulo para registrar movimientos financieros en una lista vacía.")
   #crea 4 columnas para mostrar los elementos del formulario en forma horizontal
   col1, col2, col3, col4 = st.columns(4)
-  col1.width=300
+  col1.width=800
   concepto = col1.text_input("Concepto")
   tipo_mov = col2.selectbox("Tipo Movimiento",("Ingreso","Gasto"),index=None,placeholder="Seleccione...")
   valor = round(col3.number_input("Valor S/",value=0.00,format="%.2f"),2)
