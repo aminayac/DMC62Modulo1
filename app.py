@@ -67,7 +67,7 @@ if opcion == HOME:
   st.write("Breve descripción del proyecto")
   st.write("Tecnologías utilizadas")
 elif opcion == EJERCICIO1:
-
+  #Ejercicio 1 – Flujo de caja con listas
   #inicializa listas
   lista_conceptos = []
   lista_tipos_mov = []
@@ -84,8 +84,8 @@ elif opcion == EJERCICIO1:
     lista_tipos_mov = st.session_state['LISTA_TIPO_MOV']
     lista_valores   = st.session_state['LISTA_VALOR']
 
-  #Ejercicio 1 – Flujo de caja con listas
-  st.write("Ejercicio 1 – Flujo de caja con listas")
+  st.markdown("**Ejercicio 1 – Flujo de caja con listas**")
+  st.markdown("En este ejercicio se desarrolla un módulo para registrar movimientos financieros en una lista vacía.")
   #crea 4 columnas para mostrar los elementos del formulario
   col1, col2, col3, col4 = st.columns(4)
   concepto = col1.text_input("Concepto")
