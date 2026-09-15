@@ -93,7 +93,7 @@ elif opcion == EJERCICIO1:
   valor = round(col3.number_input("Valor S/",value=0.00,format="%.2f"),2)
   col4.write("")
   col4.write("")
-  if col4.button("Añadir"):
+  if col4.button("Añadir",type="primary"):
       if concepto.strip() == "":
           st.error("El campo concepto no puede estar vacío.")
       elif tipo_mov == None:
