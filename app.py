@@ -89,7 +89,7 @@ elif opcion == EJERCICIO1:
   st.markdown("**Ejercicio 1 – Flujo de caja con listas**")
   st.markdown("En este ejercicio se desarrolla un módulo para registrar movimientos financieros en una lista vacía.")
   #crea 4 columnas para mostrar los elementos del formulario en forma horizontal
-  col1, col2, col3, col4 = st.columns(4, width=1200)
+  col1, col2, col3, col4 = st.columns(4, width=2200)
 
   concepto = col1.text_input("Concepto")
   tipo_mov = col2.selectbox("Tipo Movimiento",("Ingreso","Gasto"),index=None,placeholder="Seleccione...")
