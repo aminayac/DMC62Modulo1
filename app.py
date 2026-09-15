@@ -75,7 +75,7 @@ elif opcion == EJERCICIO1:
   col1, col2, col3, col4 = st.columns(4)
   concepto = col1.text_input("Concepto")
   tipo_mov = col2.selectbox("Tipo Movimiento",("Ingreso","Gasto"),index=None,placeholder="Seleccione...")
-  valor = float(col3.number_input("Valor S/",value=0.00,format="%.2f"))
+  valor = round(col3.number_input("Valor S/",value=0.00,format="%.2f"),2)
   col4.write("")
   col4.write("")
   if col4.button("Añadir"):
