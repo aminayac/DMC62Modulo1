@@ -72,8 +72,10 @@ elif opcion == EJERCICIO1:
   lista_conceptos = []
   lista_tipos_mov = []
   lista_valores   = []
-  #verifica si existen las variables de sesion: lista de conceptos, tipos y montos
-  #si no existen, las inicializa, si existen, las recupera
+  """
+  Verifica si existen las variables de sesion: lista de conceptos, tipos y montos
+  si no existen, las inicializa, si existen, las recupera
+  """
   if 'MISESION' not in st.session_state:
     st.session_state['MISESION'] = True
     st.session_state['LISTA_CONCEPTOS'] = lista_conceptos
@@ -86,8 +88,9 @@ elif opcion == EJERCICIO1:
 
   st.markdown("**Ejercicio 1 – Flujo de caja con listas**")
   st.markdown("En este ejercicio se desarrolla un módulo para registrar movimientos financieros en una lista vacía.")
-  #crea 4 columnas para mostrar los elementos del formulario
+  #crea 4 columnas para mostrar los elementos del formulario en forma horizontal
   col1, col2, col3, col4 = st.columns(4)
+  col1.width=300
   concepto = col1.text_input("Concepto")
   tipo_mov = col2.selectbox("Tipo Movimiento",("Ingreso","Gasto"),index=None,placeholder="Seleccione...")
   valor = round(col3.number_input("Valor S/",value=0.00,format="%.2f"),2)
