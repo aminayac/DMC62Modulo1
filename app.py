@@ -128,10 +128,10 @@ elif opcion == EJERCICIO1:
   saldo = totales["Ingresos"] - totales["Gastos"]
   col3.write(f"Saldo   :  {saldo}")
   if saldo > 0:
-     col4.metric(value="A favor",delta=saldo)
+     col4.metric("Saldo","A favor",delta=saldo)
   elif saldo < 0:
-     col4.metric(value="En contra",delta=saldo)
+     col4.metric("Saldo","En contra",delta=saldo)
   else:
-     col4.metric(value="Equilibrio",delta=saldo)
+     col4.metric("Saldo","Equilibrio",delta=saldo)
 
 
