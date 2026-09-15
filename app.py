@@ -112,11 +112,11 @@ elif opcion == EJERCICIO1:
           st.session_state['LISTA_CONCEPTOS'] = lista_conceptos
           st.session_state['LISTA_TIPO_MOV'] = lista_tipos_mov
           st.session_state['LISTA_VALOR'] = lista_valores
-      #st.write(lista_conceptos)  
-      #st.write(lista_tipos_mov)
-      #st.write(lista_valores)
+          st.success("El movimiento se añadió a la lista")
+
   diccionario_datos = {"Concepto" : lista_conceptos, "Tipo Movimiento" : lista_tipos_mov, "Valor" : lista_valores}
   tabla = pandas.DataFrame(diccionario_datos)
+  tabla.style.format( { "Valor": "S/ {:,.2f}" }
   st.dataframe(tabla, hide_index=True)
   #col1.text_input.value = ""
   #col2.selectbox.index=None
