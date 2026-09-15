@@ -6,10 +6,10 @@ import pandas
 def obtener_totales(lista):
    ingresos = 0.00
    gastos = 0.00
-   for x in lista
-       if x > 0
+   for x in lista:
+       if x > 0:
             ingresos = ingresos + x
-        else
+       else:
             gastos = gastos + (x*-1)
    return {
         "Ingresos": ingresos,
