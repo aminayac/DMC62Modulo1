@@ -122,9 +122,16 @@ elif opcion == EJERCICIO1:
   #col2.selectbox.index=None
   #col3.number_input.value=0
   totales = obtener_totales(lista_valores)
-  col1, col2, col3 = st.columns(3)
+  col1, col2, col3, col4 = st.columns(4)
   col1.write(f"Ingresos : {totales["Ingresos"]}")
   col2.write(f"Gastos   : {totales["Gastos"]}")
-  col3.write(f"Saldo   :  {totales["Ingresos"] - totales["Gastos"]}")
+  saldo = totales["Ingresos"] - totales["Gastos"]
+  col3.write(f"Saldo   :  {saldo}")
+  if saldo > 0:
+     col4.metric("A favor",saldo)
+  elif saldo < 0:
+     col4.metric("En contra",saldo)
+  else:
+     col4.metric("En contra",saldo)
 
 
