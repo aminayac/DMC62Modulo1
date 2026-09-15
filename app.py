@@ -116,7 +116,7 @@ elif opcion == EJERCICIO1:
 
   diccionario_datos = {"Concepto" : lista_conceptos, "Tipo Movimiento" : lista_tipos_mov, "Valor" : lista_valores}
   tabla = pandas.DataFrame(diccionario_datos)
-  tabla.style.format( { "Valor": "S/ {:,.2f}" }
+  tabla.style.format( { "Valor": "S/ {:,.2f}" } )
   st.dataframe(tabla, hide_index=True)
   #col1.text_input.value = ""
   #col2.selectbox.index=None
