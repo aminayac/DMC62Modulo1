@@ -2,6 +2,20 @@ import streamlit as st
 import datetime
 import pandas
 
+#funcion para el ejercicio 1, para obtener totales de ingresos y gastos
+def obtener_totales(lista):
+   ingresos = 0.00
+   gastos = 0.00
+   for x in lista
+       if x > 0
+            ingresos = ingresos + x
+        else
+            gastos = gastos + (x*-1)
+   return {
+        "Ingresos": ingresos,
+        "Gastos"  : gastos
+        } 
+
 #opciones del selectbox
 HOME       = "Home"
 EJERCICIO1 = "Ejercicio 1"
@@ -53,6 +67,7 @@ if opcion == HOME:
   st.write("Breve descripción del proyecto")
   st.write("Tecnologías utilizadas")
 elif opcion == EJERCICIO1:
+
   #inicializa listas
   lista_conceptos = []
   lista_tipos_mov = []
@@ -106,9 +121,10 @@ elif opcion == EJERCICIO1:
   #col1.text_input.value = ""
   #col2.selectbox.index=None
   #col3.number_input.value=0
+  totales = obtener_totales(lista_valores)
   col1, col2, col3 = st.columns(3)
-  col1.write(f"Ingresos : {sum(lista_valores)}")
-  #col2.write("Gastos   : " , sum(lista_valores))
-  #col3.write("Saldo    : " , sum(lista_valores))
+  col1.write(f"Ingresos : {totales["Ingresos"]}")
+  col2.write(f"Gastos   : {totales["Gastos"]}")
+  col3.write(f"Saldo   :  {totales["Ingresos"] - totales["Gastos"]}")
 
 
