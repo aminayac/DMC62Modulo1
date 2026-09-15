@@ -115,9 +115,9 @@ elif opcion == EJERCICIO1:
           st.success("El movimiento se añadió a la lista")
 
   diccionario_datos = {"Concepto" : lista_conceptos, "Tipo Movimiento" : lista_tipos_mov, "Valor" : lista_valores}
-  tabla = pandas.DataFrame(diccionario_datos)
-  tabla.style.format( { "Valor": "S/ {:,.2f}" } )
-  st.dataframe(tabla, hide_index=True)
+  df = pandas.DataFrame(diccionario_datos)
+  df.style.format( { "Valor" : "S/ {:.2f}" } )
+  st.dataframe(df, hide_index=True)
   #col1.text_input.value = ""
   #col2.selectbox.index=None
   #col3.number_input.value=0
