@@ -106,7 +106,7 @@ elif opcion == EJERCICIO1:
   diccionario_datos = {"Concepto" : lista_conceptos, "Tipo Movimiento" : lista_tipos_mov, "Valor" : lista_valores}
   df = pandas.DataFrame(diccionario_datos)
   df.style.format( { "Valor" : "S/ {:.2f}" } )
-  st.dataframe(df, hide_index=True,column_config={"Valor": st.column_config.NumberColumn("Valor", format="S/ %.2f"))
+  st.dataframe(df, hide_index=True,column_config={"Valor": st.column_config.NumberColumn("Valor", format="S/ %.2f")})
   totales = obtener_totales(lista_valores)
   col1, col2, col3, col4 = st.columns(4)
   col1.write(f"Ingresos : {totales["Ingresos"]}")
