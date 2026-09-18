@@ -155,9 +155,9 @@ elif opcion == EJERCICIO2:
           st.error("El campo cantidad no puede ser menor o igual a cero.")
       else:
           total = precio * cantidad
-          nuevo_registro = np.array([producto, categoria, precio, cantidad, total], dtype=object)
-         
-          arreglo.append(nuevo_registro)
+          nuevo_registro = np.array([[producto, categoria, precio, cantidad, total]], dtype=object)
+          arreglo = np.vstack((arreglo, nuevo_registro))
+          #arreglo.append(nuevo_registro)
           
           st.session_state['ARREGLO'] = arreglo
           st.success("El movimiento se añadió a la lista")
