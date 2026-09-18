@@ -1,6 +1,7 @@
 import streamlit as st
 import datetime
-import pandas
+import pandas as pd
+import numpy as np
 
 #funcion para el ejercicio 1, para obtener totales de ingresos y gastos
 def obtener_totales(lista):
@@ -104,7 +105,7 @@ elif opcion == EJERCICIO1:
           st.success("El movimiento se añadió a la lista")
 
   diccionario_datos = {"Concepto" : lista_conceptos, "Tipo Movimiento" : lista_tipos_mov, "Valor" : lista_valores}
-  df = pandas.DataFrame(diccionario_datos)
+  df = pd.DataFrame(diccionario_datos)
   df.style.format( { "Valor" : "S/ {:.2f}" } )
   st.dataframe(df, hide_index=True,column_config={"Valor": st.column_config.NumberColumn("Valor", format="S/ %.2f")})
   totales = obtener_totales(lista_valores)
@@ -119,5 +120,52 @@ elif opcion == EJERCICIO1:
      col4.metric("Saldo","En contra",delta=saldo,label_visibility="hidden")
   else:
      col4.metric("Saldo","Equilibrio",delta=saldo,label_visibility="hidden")
+elif opcion == EJERCICIO2:
+  #Ejercicio 2 – Registro con NumPy, arrays y DataFrame
+  #inicializa array
+  arreglo=np.empty((0, 5), dtype=object)
+  """
+  Verifica si existen las variables de sesion arreglo
+  si no existe, la inicializa, si existe, la recupera
+  """
+  if 'ARREGLO' not in st.session_state:
+    st.session_state['ARREGLO'] = arreglo
+  else:
+    arreglo = st.session_state['ARREGLO']
 
+  st.markdown("**Ejercicio 2 – Registro con NumPy, arrays y DataFrame**")
+  st.markdown("ddfvdfEn este ejercicio se desarrolla un módulo para registrar movimientos financieros en una lista vacía.")
+  #crea 5 columnas para mostrar los elementos del formulario en forma horizontal
+  col1, col2, col3, col4, col5 = st.columns([2, 1, 1, 1, 1])
+
+  producto = col1.text_input("Producto")
+  categoria = col2.selectbox("Categoria",("Laptop","PC","Mouse","Audifono"),index=None,placeholder="Seleccione...")
+  precio = round(col3.number_input("Precio S/",value=0.00,format="%.2f"),2)
+  cantidad = col4.number_input("Cantidad",value=0)
+  col5.write("")
+  col5.write("")
+  if col5.button("Añadir",type="primary"):
+      if producto.strip() == "":
+          st.error("El campo producto no puede estar vacío.")
+      elif categoria == None:
+          st.error("Seleccione una categoria")
+      elif precio <= 0:
+          st.error("El campo precio no puede ser menor o igual a cero.")
+      elif cantidad <= 0:
+          st.error("El campo cantidad no puede ser menor o igual a cero.")
+      else:
+          total = precio * cantidad
+          nuevo_registro = np.array([[producto, categoria, precio, cantidad, total]], dtype=object)
+         
+          arreglo.append(nuevo_registro)
+          
+          st.session_state['ARREGLO'] = arreglo
+          st.success("El movimiento se añadió a la lista")
+
+  df = pandas.DataFrame(arreglo, columns=["Producto", "Categoría", "Precio", "Cantidad", "Total"])
+  df.style.format( { "Total" : "S/ {:.2f}" } )
+  st.dataframe(df, hide_index=True,column_config={"Total": st.column_config.NumberColumn("Total", format="S/ %.2f")})
+ 
+elif opcion == EJERCICIO3:
+elif opcion == EJERCICIO4:
 
