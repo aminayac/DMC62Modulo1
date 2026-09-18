@@ -26,7 +26,7 @@ EJERCICIO4 = "Ejercicio 4"
 # Configuración de la página
 st.set_page_config(
     page_title="Especialización en Python for Analytics - Módulo 1",
-    page_icon=":armenia:"
+    page_icon=":armenia:"  #mis iniciales AM
 )
 
 st.title("Especialización en Python for Analytics",text_alignment="center")
@@ -43,19 +43,6 @@ opcion = st.sidebar.selectbox(
     (HOME, EJERCICIO1, EJERCICIO2, EJERCICIO3, EJERCICIO4),
     index=0
 )
-
-st.sidebar.markdown("---")
-st.sidebar.markdown("### Autor")
-st.sidebar.write("Aníbal Abraham Minaya Cubillas")
-st.sidebar.write("Estudiante — Especialización en Python for Analytics")
-st.sidebar.write("Año: ")
-
-if st.sidebar.checkbox("Mostrar contacto"):
-    st.sidebar.markdown("📧 anibal@example.com  ")
-    st.sidebar.markdown("📍 Lima, Perú  ")
-
-st.sidebar.markdown("---")
-st.sidebar.markdown("_Esta aplicación utiliza únicamente la librería Streamlit para su interfaz._")
 
 if opcion == HOME:
   #página home de presentación del proyecto
@@ -76,8 +63,7 @@ elif opcion == EJERCICIO1:
   Verifica si existen las variables de sesion: lista de conceptos, tipos y montos
   si no existen, las inicializa, si existen, las recupera
   """
-  if 'MISESION' not in st.session_state:
-    st.session_state['MISESION'] = True
+  if 'LISTA_CONCEPTOS' not in st.session_state:
     st.session_state['LISTA_CONCEPTOS'] = lista_conceptos
     st.session_state['LISTA_TIPO_MOV'] = lista_tipos_mov
     st.session_state['LISTA_VALOR'] = lista_valores
