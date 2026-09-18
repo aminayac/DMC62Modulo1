@@ -155,7 +155,7 @@ elif opcion == EJERCICIO2:
           st.error("El campo cantidad no puede ser menor o igual a cero.")
       else:
           total = precio * cantidad
-          nuevo_registro = np.array([[producto, categoria, precio, cantidad, total]], dtype=object)
+          nuevo_registro = np.array([producto, categoria, precio, cantidad, total], dtype=object)
          
           arreglo.append(nuevo_registro)
           
