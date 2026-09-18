@@ -162,7 +162,7 @@ elif opcion == EJERCICIO2:
           st.session_state['ARREGLO'] = arreglo
           st.success("El movimiento se añadió a la lista")
 
-  df = pandas.DataFrame(arreglo, columns=["Producto", "Categoría", "Precio", "Cantidad", "Total"])
+  df = pd.DataFrame(arreglo, columns=["Producto", "Categoría", "Precio", "Cantidad", "Total"])
   df.style.format( { "Total" : "S/ {:.2f}" } )
   st.dataframe(df, hide_index=True,column_config={"Total": st.column_config.NumberColumn("Total", format="S/ %.2f")})
  
