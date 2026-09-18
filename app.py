@@ -166,6 +166,6 @@ elif opcion == EJERCICIO2:
   df.style.format( { "Total" : "S/ {:.2f}" } )
   st.dataframe(df, hide_index=True,column_config={"Total": st.column_config.NumberColumn("Total", format="S/ %.2f")})
  
-elif opcion == EJERCICIO3:
-elif opcion == EJERCICIO4:
+#elif opcion == EJERCICIO3:
+#elif opcion == EJERCICIO4:
 
