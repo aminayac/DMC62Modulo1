@@ -196,8 +196,8 @@ elif opcion == EJERCICIO3:
           st.write(f"Tasa de éxito PCT: {exito}")
           st.success("Función ejecutada satisfactoriamente.")
        except Exception as e:
-          error = 0
-          exito = 0
+          error = "Error"
+          exito = "Error"
           st.error(f"Error: {e}")
        nuevo_registro = np.array([[fallidas, totales, error, exito, fecha_formato]], dtype=object)
        arreglo_historico = np.vstack((arreglo_historico, nuevo_registro))
