@@ -173,12 +173,12 @@ elif opcion == EJERCICIO3:
   #inicializa array
   arreglo_historico=np.empty((0, 5), dtype=object)
 
+  if 'ARREGLO_HIST' not in st.session_state:
+      st.session_state['ARREGLO_HIST'] = arreglo_historico
+  else:
+      arreglo_historico = st.session_state['ARREGLO_HIST']
+        
   if funcion == FUNCION_ERROR_TXS:
-     if 'ARREGLO_HIST' not in st.session_state:
-        st.session_state['ARREGLO_HIST'] = arreglo_historico
-     else:
-        arreglo_historico = st.session_state['ARREGLO_HIST']
-           
      fallidas = st.number_input("Transacciones fallidas",value=0)
      totales  = st.number_input("Transacciones totales",value=0)
      if st.button("Ejecutar",type="primary"):
