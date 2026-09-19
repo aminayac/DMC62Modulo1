@@ -181,13 +181,14 @@ elif opcion == EJERCICIO3:
   if funcion == FUNCION_ERROR_TXS:
     fallidas = st.number_input("Transacciones fallidas",value=0)
     totales  = st.number_input("Transacciones totales",value=0)
-    fecha = (datetime.now()).strftime("%Y/%m/%d %H:%M:%S")
+    fecha = datetime.now()
+    fecha_formato = fecha.strftime("%Y/%m/%d %H:%M:%S")
 
     if st.button("Ejecutar",type="primary"):
        resultado = lfp1.calcular_tasa_error_transacciones(fallidas,totales)
        st.write(f"Tasa de error PCT: {resultado["tasa_error_pct"]}")
        st.write(f"Tasa de éxito PCT: {resultado["tasa_exito_pct"]}")
-       nuevo_registro = np.array([[fallidas, totales, resultado["tasa_error_pct"], resultado["tasa_exito_pct"], fecha]], dtype=object)
+       nuevo_registro = np.array([[fallidas, totales, resultado["tasa_error_pct"], resultado["tasa_exito_pct"], fecha_formato]], dtype=object)
        arreglo_historico = np.vstack((arreglo_historico, nuevo_registro))
        st.session_state['ARREGLO_HIST'] = arreglo_historico
        st.success("Función ejecutada satisfactoriamente.")
