@@ -140,7 +140,7 @@ elif opcion == EJERCICIO2:
   col1, col2, col3, col4, col5 = st.columns([2, 1, 1, 1, 1])
 
   producto = col1.text_input("Producto")
-  categoria = col2.selectbox("Categoria",("Laptop","PC","Mouse","Audifono"),index=None,placeholder="Seleccione...")
+  categoria = col2.selectbox("Categoria",("Laptop","PC","Celular","Audifono","Tablet","Mouse"),index=None,placeholder="Seleccione...")
   precio = round(col3.number_input("Precio S/",value=0.00,format="%.2f"),2)
   cantidad = col4.number_input("Cantidad",value=0)
   col5.write("")
@@ -165,10 +165,12 @@ elif opcion == EJERCICIO2:
   df = pd.DataFrame(arreglo, columns=["Producto", "Categoría", "Precio", "Cantidad", "Total"])
   df.style.format( { "Total" : "S/ {:.2f}" } )
   st.dataframe(df, hide_index=True,column_config={"Total": st.column_config.NumberColumn("Total", format="S/ %.2f")})
- 
+
+  venta_total = np.sum(arreglo[:, 4].astype(float))
+  st.metric("Ventas Totales", f"S/ {venta_total:,.2f}")
 elif opcion == EJERCICIO3:
   st.markdown("**Ejercicio 3 – Uso de funciones desde una librería externa**")
-  st.markdown("ddfvdfEn este ejercicio se desarrolla un módulo para registrar movimientos financieros en una lista vacía.")
+  st.markdown("En este ejercicio se invoca una función de la librería libreria_funciones_proyecto1.")
 
   funcion = st.selectbox("Función",("Tasa de error de transacciones"),index=None,placeholder="Seleccione una función...")
   #inicializa array
