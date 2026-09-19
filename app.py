@@ -181,7 +181,7 @@ elif opcion == EJERCICIO3:
   if funcion == FUNCION_ERROR_TXS:
     fallidas = st.number_input("Transacciones fallidas",value=0)
     totales  = st.number_input("Transacciones totales",value=0)
-    fecha = datetime.datetime.now()
+    fecha = datetime.datetime.now(zoneinfo.ZoneInfo("America/Lima"))
     fecha_formato = fecha.strftime("%Y/%m/%d %H:%M:%S")
 
     if st.button("Ejecutar",type="primary"):
