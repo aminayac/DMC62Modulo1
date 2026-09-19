@@ -186,13 +186,20 @@ elif opcion == EJERCICIO3:
     fecha_formato = fecha.strftime("%Y/%m/%d %H:%M:%S")
 
     if st.button("Ejecutar",type="primary"):
-       resultado = lfp1.calcular_tasa_error_transacciones(fallidas,totales)
-       st.write(f"Tasa de error PCT: {resultado["tasa_error_pct"]}")
-       st.write(f"Tasa de éxito PCT: {resultado["tasa_exito_pct"]}")
-       nuevo_registro = np.array([[fallidas, totales, resultado["tasa_error_pct"], resultado["tasa_exito_pct"], fecha_formato]], dtype=object)
+       try:
+          resultado = lfp1.calcular_tasa_error_transacciones(fallidas,totales)
+          error = resultado["tasa_error_pct"]
+          exito = resultado["tasa_exito_pct"]
+          st.write(f"Tasa de error PCT: {error}")
+          st.write(f"Tasa de éxito PCT: {exito}")
+          st.success("Función ejecutada satisfactoriamente.")
+       except Exception as e:
+          error = 0
+          exito = 0
+          st.error(f"Error: {e}")
+       nuevo_registro = np.array([[fallidas, totales, error, exito, fecha_formato]], dtype=object)
        arreglo_historico = np.vstack((arreglo_historico, nuevo_registro))
        st.session_state['ARREGLO_HIST'] = arreglo_historico
-       st.success("Función ejecutada satisfactoriamente.")
        
     df = pd.DataFrame(arreglo_historico, columns=["TXs Fallidas", "TXs Totales", "Tasa Error", "Tasa Exito", "Fecha"])
     st.dataframe(df, hide_index=True)
