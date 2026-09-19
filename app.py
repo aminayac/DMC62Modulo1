@@ -127,10 +127,7 @@ elif opcion == EJERCICIO2:
   #Ejercicio 2 – Registro con NumPy, arrays y DataFrame
   #inicializa array
   arreglo=np.empty((0, 5), dtype=object)
-  """
-  Verifica si existen las variables de sesion arreglo
-  si no existe, la inicializa, si existe, la recupera
-  """
+  
   if 'ARREGLO' not in st.session_state:
     st.session_state['ARREGLO'] = arreglo
   else:
@@ -159,8 +156,7 @@ elif opcion == EJERCICIO2:
       else:
           total = precio * cantidad
           nuevo_registro = np.array([[producto, categoria, precio, cantidad, total]], dtype=object)
-          arreglo = np.vstack((arreglo, nuevo_registro))
-          #arreglo.append(nuevo_registro)
+          arreglo = np.vstack((arreglo, nuevo_registro)) #no funcionó con append
           
           st.session_state['ARREGLO'] = arreglo
           st.success("El movimiento se añadió a la lista")
@@ -174,13 +170,28 @@ elif opcion == EJERCICIO3:
   st.markdown("ddfvdfEn este ejercicio se desarrolla un módulo para registrar movimientos financieros en una lista vacía.")
 
   funcion = st.selectbox("Función",("Tasa de error de transacciones"),index=None,placeholder="Seleccione una función...")
+  #inicializa array
+  arreglo_historico=np.empty((0, 5), dtype=object)
 
   if funcion == FUNCION_ERROR_TXS:
+     if 'ARREGLO_HIST' not in st.session_state:
+        st.session_state['ARREGLO_HIST'] = arreglo
+     else:
+        arreglo_historico = st.session_state['ARREGLO_HIST']
+           
      fallidas = st.number_input("Transacciones fallidas",value=0)
      totales  = st.number_input("Transacciones totales",value=0)
      if st.button("Ejecutar",type="primary"):
         resultado = lfp1.calcular_tasa_error_transacciones(fallidas,totales)
         st.write(f"Tasa de error PCT: {resultado["tasa_error_pct"]}")
         st.write(f"Tasa de éxito PCT: {resultado["tasa_exito_pct"]}")
+
+        nuevo_registro = np.array([[fallidas, totales, resultado["tasa_error_pct"], resultado["tasa_exito_pct"], "fecha"]], dtype=object)
+        arreglo_historico = np.vstack((arreglo_historico, nuevo_registro))
+        df = pd.DataFrame(arreglo_historico, columns=["TXs Fallidas", "TXs Totales", "Tasa Error", "Tasa Exito", "Fecha"])
+        st.dataframe(df, hide_index=True)
+        
+  
+        
 #elif opcion == EJERCICIO4:
 
