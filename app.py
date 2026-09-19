@@ -2,6 +2,7 @@ import streamlit as st
 import datetime
 import pandas as pd
 import numpy as np
+import libreria_funciones_proyecto1 as lfp1
 
 #funcion para el ejercicio 1, para obtener totales de ingresos y gastos
 def obtener_totales(lista):
@@ -166,6 +167,15 @@ elif opcion == EJERCICIO2:
   df.style.format( { "Total" : "S/ {:.2f}" } )
   st.dataframe(df, hide_index=True,column_config={"Total": st.column_config.NumberColumn("Total", format="S/ %.2f")})
  
-#elif opcion == EJERCICIO3:
+elif opcion == EJERCICIO3:
+  st.markdown("**Ejercicio 3 – Uso de funciones desde una librería externa**")
+  st.markdown("ddfvdfEn este ejercicio se desarrolla un módulo para registrar movimientos financieros en una lista vacía.")
+  
+  fallidas = st.number_input("Transacciones fallidas",value=0)
+  totales  = st.number_input("Transacciones totales",value=0)
+  if st.button("Ejecutar",type="primary"):
+     resultado = lfp1.calcular_tasa_error_transacciones(fallidas,totales)
+     st.write(resultado{"tasa_error_pct"})
+     st.write(resultado{"tasa_exito_pct"})
 #elif opcion == EJERCICIO4:
 
