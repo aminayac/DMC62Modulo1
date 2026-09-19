@@ -202,7 +202,7 @@ elif opcion == EJERCICIO3:
        nuevo_registro = np.array([[fallidas, totales, error, exito, fecha_formato]], dtype=object)
        arreglo_historico = np.vstack((arreglo_historico, nuevo_registro))
        st.session_state['ARREGLO_HIST'] = arreglo_historico
-       
+    st.markdown("**Histórico de ejecuciones**")   
     df = pd.DataFrame(arreglo_historico, columns=["TXs Fallidas", "TXs Totales", "Tasa Error", "Tasa Exito", "Fecha"])
     st.dataframe(df, hide_index=True)
         
