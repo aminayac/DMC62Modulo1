@@ -188,8 +188,8 @@ elif opcion == EJERCICIO3:
 
         nuevo_registro = np.array([[fallidas, totales, resultado["tasa_error_pct"], resultado["tasa_exito_pct"], "fecha"]], dtype=object)
         arreglo_historico = np.vstack((arreglo_historico, nuevo_registro))
-        df = pd.DataFrame(arreglo_historico, columns=["TXs Fallidas", "TXs Totales", "Tasa Error", "Tasa Exito", "Fecha"])
-        st.dataframe(df, hide_index=True)
+     df = pd.DataFrame(arreglo_historico, columns=["TXs Fallidas", "TXs Totales", "Tasa Error", "Tasa Exito", "Fecha"])
+     st.dataframe(df, hide_index=True)
         
   
         
