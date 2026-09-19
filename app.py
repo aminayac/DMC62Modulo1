@@ -1,5 +1,6 @@
 import streamlit as st
 import datetime
+import zoneinfo
 import pandas as pd
 import numpy as np
 import libreria_funciones_proyecto1 as lfp1
