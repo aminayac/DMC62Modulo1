@@ -175,7 +175,7 @@ elif opcion == EJERCICIO3:
 
   if funcion == FUNCION_ERROR_TXS:
      if 'ARREGLO_HIST' not in st.session_state:
-        st.session_state['ARREGLO_HIST'] = arreglo
+        st.session_state['ARREGLO_HIST'] = arreglo_historico
      else:
         arreglo_historico = st.session_state['ARREGLO_HIST']
            
