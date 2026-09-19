@@ -175,7 +175,7 @@ elif opcion == EJERCICIO3:
   totales  = st.number_input("Transacciones totales",value=0)
   if st.button("Ejecutar",type="primary"):
      resultado = lfp1.calcular_tasa_error_transacciones(fallidas,totales)
-     st.write(f"Tasa de error PCT: {resultado{"tasa_error_pct"}}")
-     st.write(f"Tasa de éxito PCT: {resultado{"tasa_exito_pct"}}")
+     st.write(f"Tasa de error PCT: {resultado["tasa_error_pct"]}")
+     st.write(f"Tasa de éxito PCT: {resultado["tasa_exito_pct"]}")
 #elif opcion == EJERCICIO4:
 
