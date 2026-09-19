@@ -25,6 +25,8 @@ EJERCICIO2 = "Ejercicio 2"
 EJERCICIO3 = "Ejercicio 3"
 EJERCICIO4 = "Ejercicio 4"
 
+FUNCION_ERROR_TXS = "Tasa de error de transacciones"
+
 # Configuración de la página
 st.set_page_config(
     page_title="Especialización en Python for Analytics - Módulo 1",
@@ -170,12 +172,15 @@ elif opcion == EJERCICIO2:
 elif opcion == EJERCICIO3:
   st.markdown("**Ejercicio 3 – Uso de funciones desde una librería externa**")
   st.markdown("ddfvdfEn este ejercicio se desarrolla un módulo para registrar movimientos financieros en una lista vacía.")
-  
-  fallidas = st.number_input("Transacciones fallidas",value=0)
-  totales  = st.number_input("Transacciones totales",value=0)
-  if st.button("Ejecutar",type="primary"):
-     resultado = lfp1.calcular_tasa_error_transacciones(fallidas,totales)
-     st.write(f"Tasa de error PCT: {resultado["tasa_error_pct"]}")
-     st.write(f"Tasa de éxito PCT: {resultado["tasa_exito_pct"]}")
+
+  funcion = st.selectbox("Función",("Tasa de error de transacciones"),index=None,placeholder="Seleccione una función...")
+
+  if funcion == FUNCION_ERROR_TXS:
+     fallidas = st.number_input("Transacciones fallidas",value=0)
+     totales  = st.number_input("Transacciones totales",value=0)
+     if st.button("Ejecutar",type="primary"):
+        resultado = lfp1.calcular_tasa_error_transacciones(fallidas,totales)
+        st.write(f"Tasa de error PCT: {resultado["tasa_error_pct"]}")
+        st.write(f"Tasa de éxito PCT: {resultado["tasa_exito_pct"]}")
 #elif opcion == EJERCICIO4:
 
