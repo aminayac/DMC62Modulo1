@@ -179,17 +179,16 @@ elif opcion == EJERCICIO3:
       arreglo_historico = st.session_state['ARREGLO_HIST']
         
   if funcion == FUNCION_ERROR_TXS:
-     fallidas = st.number_input("Transacciones fallidas",value=0)
-     totales  = st.number_input("Transacciones totales",value=0)
-     if st.button("Ejecutar",type="primary"):
-        resultado = lfp1.calcular_tasa_error_transacciones(fallidas,totales)
-        st.write(f"Tasa de error PCT: {resultado["tasa_error_pct"]}")
-        st.write(f"Tasa de éxito PCT: {resultado["tasa_exito_pct"]}")
-
-        nuevo_registro = np.array([[fallidas, totales, resultado["tasa_error_pct"], resultado["tasa_exito_pct"], "fecha"]], dtype=object)
-        arreglo_historico = np.vstack((arreglo_historico, nuevo_registro))
-     df = pd.DataFrame(arreglo_historico, columns=["TXs Fallidas", "TXs Totales", "Tasa Error", "Tasa Exito", "Fecha"])
-     st.dataframe(df, hide_index=True)
+    fallidas = st.number_input("Transacciones fallidas",value=0)
+    totales  = st.number_input("Transacciones totales",value=0)
+    if st.button("Ejecutar",type="primary"):
+       resultado = lfp1.calcular_tasa_error_transacciones(fallidas,totales)
+       st.write(f"Tasa de error PCT: {resultado["tasa_error_pct"]}")
+       st.write(f"Tasa de éxito PCT: {resultado["tasa_exito_pct"]}")
+       nuevo_registro = np.array([[fallidas, totales, resultado["tasa_error_pct"], resultado["tasa_exito_pct"], "fecha"]], dtype=object)
+       arreglo_historico = np.vstack((arreglo_historico, nuevo_registro))
+    df = pd.DataFrame(arreglo_historico, columns=["TXs Fallidas", "TXs Totales", "Tasa Error", "Tasa Exito", "Fecha"])
+    st.dataframe(df, hide_index=True)
         
   
         
