@@ -620,7 +620,7 @@ elif opcion == EJERCICIO4:
     with st.expander("📊 Ver servidores", expanded=True):
         array_serv = gestor_serv.mostrar_info_servidores()
         df = pd.DataFrame(array_serv, columns=[
-            "Nombre", "Tiempo Total (hrs)", "Tiempo Caída (hrs)",
+            "Nombre Servidor", "Tiempo Total (hrs)", "Tiempo Caída (hrs)",
             "Almacenamiento Total (GB)", "Almacenamiento Usado (GB)",
             "Disponibilidad (%)*", "Uso Almacenamiento (%)*", "Estado*"
         ])
